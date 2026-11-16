@@ -2,16 +2,9 @@ services:
   - type: web
     name: barbearia-geslei
     runtime: python
-    plan: starter
+    plan: free
     buildCommand: "echo 'Sem dependências externas'"
     startCommand: "python reservas_web.py"
     envVars:
-      - key: DATA_DIR
-        value: /var/data
       - key: BARBEARIA_ADMIN_TOKEN
         generateValue: true
-    disk:
-      name: barbearia-clientes
-      mountPath: /var/data
-      sizeGB: 1
-      
